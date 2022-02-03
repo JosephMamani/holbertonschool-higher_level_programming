@@ -1,0 +1,85 @@
+# Import the function
+>>> MyList = __import__('1-my_list').MyList
+
+
+# Import module to run bash scripts
+>>> import os
+
+
+# Testing output content and format when sending integers
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+# Testing output sending an empty list
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+
+# Testing if there are two numbers with the same value
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(5)
+>>> my_list.append(3)
+>>> my_list.append(1)
+>>> my_list.append(1)
+>>> print(my_list)
+[1, 5, 3, 1, 1]
+>>> my_list.print_sorted()
+[1, 1, 1, 3, 5]
+
+# Testing with negative numbers and zero
+>>> my_list = MyList()
+>>> my_list.append(6)
+>>> my_list.append(-3)
+>>> my_list.append(-100)
+>>> my_list.append(0)
+>>> my_list.append(8)
+>>> print(my_list)
+[6, -3, -100, 0, 8]
+>>> my_list.print_sorted()
+[-100, -3, 0, 6, 8]
+
+# Check documentation of module, and class
+>>> len('1-my_list'.__doc__) > 10
+True
+>>> len('my_list'.__doc__) > 10
+True
+
+
+# Check existence of a readme
+>>> with open('README.md') as f:
+...     len(f.read()) > 1
+True
+
+
+# Check firstline
+>>> with open('1-my_list.py') as f:
+...     f.readline()
+'#!/usr/bin/python3\n'
+
+
+# Check lastline
+>>> with open('1-my_list.py') as f:
+...     print(f.read()[-1])
+<BLANKLINE>
+<BLANKLINE>
+
+
+# Check style
+>>> os.system('pep8 --count 1-my_list.py')
+0
+
+
+# Check if file is executable
+>>> os.access("1-my_list.py", os.X_OK)
+True
