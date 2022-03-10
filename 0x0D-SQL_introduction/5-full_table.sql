@@ -1,2 +1,3 @@
---Full description of the table
+-- Full description of the table
+-- database hbtn_0c_0 in your MySQL server.
 SHOW CREATE TABLE first_table;
