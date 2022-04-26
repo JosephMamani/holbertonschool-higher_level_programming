@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10, 10)
-#using f-strings
+# using f-strings
 if number < 0:
     print(f"{number} is negative")
 elif number > 0:
