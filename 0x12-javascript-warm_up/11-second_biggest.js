@@ -1,10 +1,4 @@
 #!/usr/bin/node
-const { argv } = require('process'); let biggest = argv[2]; let second = 0;
-
-for (let step = 3; argv[step]; step++) {
-  const number = parseInt(argv[step]);
-  if (number > biggest) {
-    second = biggest; biggest = number;
-  } else if (number > second) { second = number; }
-}
-console.log(second);
+const num = process.argv.splice(2).map((z) => parseInt(z)).sort((a, b) => (a - b));
+if (num.length < 2) console.log(0);
+else console.log(num[num.length - 2]);
