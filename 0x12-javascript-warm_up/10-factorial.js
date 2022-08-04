@@ -1,15 +1,8 @@
 #!/usr/bin/node
-const { argv } = require('process');
-const number = parseInt(argv[2]);
-
-function recurse (number) {
-  if (number === 0) {
-    return (1);
-  } return (number * recurse(number - 1));
+let num = parseInt(process.argv[2]);
+function fact (num) {
+  if (num > 0) return (num * fact(num - 1));
+  return (1);
 }
-
-if (number) {
-  console.log(recurse(number));
-} else {
-  console.log('1');
-}
+if (isNaN(num)) num = 1;
+console.log(fact(num));
